@@ -18,6 +18,9 @@ export default {
   components: {
     PostContent,
   },
+  mounted:function () {
+    this.$store.dispatch("getPosts");
+  },
   props: {
       isAdmin: {
           type: Boolean,

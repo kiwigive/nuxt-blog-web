@@ -24,7 +24,18 @@ const createStore = () => {
         },
         actions: {
             // wrap around mutations
-            nuxtServerInit(vuesContext, context) {
+            // nuxtServerInit(vuesContext, context) {
+            //     return axios.get("https://nuxt-blog-web-c0634-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json")
+            //         .then(res => {
+            //             const data = [];
+            //             for (const key in res.data) {
+            //                 data.push({ ...res.data[key], id: key })
+            //             }
+            //             vuesContext.commit("setPostState", data)
+            //         })
+            //         .catch(e => context.error(e))
+            // },
+            getPosts(vuesContext, context) {
                 return axios.get("https://nuxt-blog-web-c0634-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json")
                     .then(res => {
                         const data = [];
